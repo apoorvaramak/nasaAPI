@@ -17,9 +17,9 @@ var app = {
 
 	getNYTimesData: function() {
 		console.log("Get NY Times Data");
-		var currentSearchWord = 'biden';
-		var nyTimesURL = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=' + currentSearchWord + '&page=0&sort=newest&api-key=';
-		var myNYKey = 'E0Jowl0MxvI4RRWnjChL1eFDPwhbj3EE';
+		var currentSearchWord = 'apollo ';
+		var nyTimesURL = 'https://images-api.nasa.gov/search?q=' + currentSearchWord + '&api-key=';
+		var myNYKey = 'itOZtnn2XzP0a3GcrCaqH02bSM04rmEwQbhwpGRU';
 		var nyTimesReqURL = nyTimesURL + myNYKey;
 		console.log(nyTimesReqURL);
 		fetch(nyTimesReqURL)

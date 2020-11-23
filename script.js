@@ -17,7 +17,7 @@ var app = {
 
 	getNYTimesData: function() {
 		console.log("Get NY Times Data");
-		var currentSearchWord = 'apollo ';
+		var currentSearchWord = 'apollo%11';
 		var nyTimesURL = 'https://images-api.nasa.gov/search?q=' + currentSearchWord + '&api-key=';
 		var myNYKey = 'itOZtnn2XzP0a3GcrCaqH02bSM04rmEwQbhwpGRU';
 		var nyTimesReqURL = nyTimesURL + myNYKey;

@@ -26,7 +26,7 @@ var app = {
 		.then(response => response.json())
 		.then(data => {
 			debugger;
-			app.nyTimesArticles = data.response.docs;
+			app.nyTimesArticles = data.response.center;
 			console.log(app.nyTimesArticles);
 			app.makeHTML();
 		})

@@ -27,7 +27,7 @@ var app = {
 		.then(response => response.json())
 		.then(data => {
 			//;
-			app.nyTimesArticles = collections.items.data[0].center;
+			app.nyTimesArticles = collection.items.data[0].center;
 			console.log(app.nyTimesArticles);
 			app.makeHTML();
 		})

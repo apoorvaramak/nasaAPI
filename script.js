@@ -18,15 +18,15 @@ var app = {
 	getNYTimesData: function() {
 		console.log("Get NY Times Data");
 		var currentSearchWord = 'apollo%11';
-		var nyTimesURL = 'https://images-api.nasa.gov/search?q=' + currentSearchWord + '&api-key=';
+		var nyTimesURL = 'https://images-api.nasa.gov/search?q=' + currentSearchWord + '&api_key=';
 		var myNYKey = 'itOZtnn2XzP0a3GcrCaqH02bSM04rmEwQbhwpGRU';
 		var nyTimesReqURL = nyTimesURL + myNYKey;
 		console.log(nyTimesReqURL);
 		fetch(nyTimesReqURL)
 		.then(response => response.json())
 		.then(data => {
-			debugger;
-			app.nyTimesArticles = data.response.center;
+			//;
+			app.nyTimesArticles = response.data.collections;
 			console.log(app.nyTimesArticles);
 			app.makeHTML();
 		})

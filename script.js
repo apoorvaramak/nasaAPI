@@ -20,9 +20,10 @@ var app = {
 		var currentSearchWord = 'apollo%11';
 		var nyTimesURL = 'https://images-api.nasa.gov/search?q=' + currentSearchWord + '&api_key=';
 		var myNYKey = 'itOZtnn2XzP0a3GcrCaqH02bSM04rmEwQbhwpGRU';
+		var nasaURL = 'https://images-api.nasa.gov/search?q=' + currentSearchWord
 		var nyTimesReqURL = nyTimesURL + myNYKey;
-		console.log(nyTimesReqURL);
-		fetch(nyTimesReqURL)
+		console.log(nasaURL);
+		fetch(nasaURL)
 		.then(response => response.json())
 		.then(data => {
 			//;

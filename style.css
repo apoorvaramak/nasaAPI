@@ -1,0 +1,16 @@
+body{
+   display: flex;
+   flex-flow: row wrap;
+   font-family: 'Helvetica', sans-serif;
+   justify-content: center;
+   margin: 0 10%;
+}
+
+h3 {
+   font-size: 28px;
+   text-align: center;
+   padding: 1em;
+   border: 2px solid gray;
+   border-radius: 8px;
+   font-weight: normal;
+}

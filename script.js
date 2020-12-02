@@ -31,7 +31,7 @@ var app = {
 		.then(response => response.json())
 		.then(data => {
 			//;
-			debugger;
+			//debugger;
 			app.nasaImages = data.collection.items[0].data[0];
 			console.log(app.nasaImages.description);
 			app.makeHTML();

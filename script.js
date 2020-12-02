@@ -3,12 +3,13 @@ var app = {
 	nasaImages : [],
 
 	initialize: function() {
-		document.getElementById("submitButton").addEventListener("click", function(){app.getNasaImages()})
+		//document.getElementById('submitButton').addEventListener("click", function(){app.getNasaImages()})
+		app.getNasaImages()
 	},
 
 	makeHTML: function() {
 		var theHTML = '';
-		//debugger;
+		debugger;
 		var i;
 		for (i = 0; i < Object.keys(app.nasaImages).length; i++){
 			theHTML += "<div class='nasaTitle'>";

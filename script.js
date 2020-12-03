@@ -3,8 +3,7 @@ var app = {
 	nasaImages : [],
 
 	initialize: function() {
-		//document.getElementById('submitButton').addEventListener("click", function(){app.getNasaImages()})
-		app.getNasaImages()
+		document.getElementById("submitButton").addEventListener("click", function(){app.getNasaImages()})
 	},
 
 	makeHTML: function() {
@@ -40,8 +39,4 @@ var app = {
 		.catch(error => console.log(error));
 	}
 };
-function returnURL()
-{
-	return nasaURL;
-}
 app.initialize();

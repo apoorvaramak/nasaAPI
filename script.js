@@ -4,8 +4,26 @@ var app = {
 
 	initialize: function() {
 		document.getElementById("submitButton").addEventListener("click", function(){app.getNasaImages()})
-		document.getElementById("submitButton").addEventListener("click", function(){app.getNasaImaging()})
 		document.getElementById("submitButton2").addEventListener("click", function(){app.getNasaImages()})
+	},
+
+	makeImageHTML:function()
+	{
+		//debugger;
+		var theHTML = '';
+
+		$("#form").addClass('hide');
+		var i;
+		for (i = 0; i < Object.keys(app.nasaImages).length; i++){
+			theHTML += "<div class='nasaTitle'>";
+			theHTML += "<h3>" + "<img src=" + app.nasaImaging[0] + ">"
+			theHTML += app.nasaImages[i].data[0].title + "</br>" + "</br>" + "<span>" + app.nasaImages[i].data[0].description + "</span>" + "</h3>";
+			// theHTML += "<h3>" + app.nasaImages[i].data[0].description + "</h3>";
+			theHTML += "</div>";
+
+
+		}
+		$('.container').html(theHTML);
 	},
 
 	makeHTML: function() {
@@ -15,7 +33,7 @@ var app = {
 		var i;
 		for (i = 0; i < Object.keys(app.nasaImages).length; i++){
 			theHTML += "<div class='nasaTitle'>";
-			theHTML += "<h3>" + "<img src=" + app.nasaimaging[0] + ">" + app.nasaImages[i].data[0].title + "</br>" + "</br>" + "<span>" + app.nasaImages[i].data[0].description + "</span>" + "</h3>";
+			theHTML += "<h3>" + "<img src=" + app.makeImageHTML() + ">" + app.nasaImages[i].data[0].title + "</br>" + "</br>" + "<span>" + app.nasaImages[i].data[0].description + "</span>" + "</h3>";
 			// theHTML += "<h3>" + app.nasaImages[i].data[0].description + "</h3>";
 			theHTML += "</div>";
 
@@ -41,15 +59,19 @@ var app = {
 			//debugger;
 			app.nasaImages = data.collection.items;
 			console.log(app.nasaImages.description);
-			app.makeHTML();
+			app.getNasaImaging();
+
 		})
 		.catch(error => console.log(error));
 	},
 
 getNasaImaging: function() {
 	console.log("Get NASA Images/Videos");
-	for (i = 0; i < Object.keys(app.nasaImages).length; i++){
-		var currentNASAId = app.nasaImages[i].data[0].nasa_id;
+	if(app.nasaImages)
+	{
+		for (i = 0; i < Object.keys(app.nasaImages).length; i++){
+			var currentNASAId = app.nasaImages[0].data[0].nasa_id;
+		}
 	}
 	//debugger;
 	//var nyTimesURL = 'https://images-api.nasa.gov/search?q=' + currentSearchWord + '&api_key=';
@@ -58,13 +80,12 @@ getNasaImaging: function() {
 	//var nyTimesReqURL = nyTimesURL + myNYKey;
 	console.log(jsonURL);
 	fetch(jsonURL)
-	.then(responsejson => responsejson.json())
+	.then(response => response.json())
 	.then(data => {
 		//;
-		//debugger;
-		app.nasaImaging = data.collection.items;
-		console.log(app.nasaImaging.description);
-		app.makeHTML();
+		app.nasaImaging = data;
+		//console.log(app.data[0]);
+		app.makeImageHTML();
 	})
 	.catch(error => console.log(error));
 }

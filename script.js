@@ -4,7 +4,7 @@ var app = {
 
 	initialize: function() {
 		document.getElementById("submitButton").addEventListener("click", function(){app.getNasaImages()})
-		document.getElementById("submitButton2").addEventListener("click", function(){app.getNasaImages()})
+		// document.getElementById("submitButton2").addEventListener("click", function(){app.getNasaImages()})
 	},
 
 	makeImageHTML:function()

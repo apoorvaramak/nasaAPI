@@ -54,14 +54,14 @@ input[type=submit]
 
 .hide
 {
-  /* display: none; */
+  display: none;
   margin-top: 0%;
-  /* margin-left: 0%;
-  margin-right: 0%; */
+  margin-left: 0%;
+  margin-right: 0%;
 }
 
 .hide img{
-  margin-left: 0%; 
+  margin-left: 0%;
 }
 .container
 {
